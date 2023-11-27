@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        section {
+            padding: 2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .user-is-tabbing :focus {
+            outline: 3px solid #FFD700;
+            outline-offset: 3px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #FFD700;
+        }
+    </style>
+    <title>Ella Bazroon</title>
+</head>
+<body>
+    <a href="#main-content" style="position: absolute; left: -9999px;">Skip to main content</a>
+
+    <header role="banner">
+        <h1>Ella Bazroon</h1>
+        <p>Age: 27</p>
+        <p>Occupation: Software Engineer</p>
+    </header>
+
+    <section role="main" id="main-content">
+        <h2>About Me</h2>
+        <p>
+            Hey there! I'm Ella Bazroon, a passionate software engineer on a mission to shape a brighter world. At 27, I'm not just defying odds; I'm embracing challenges and turning them into opportunities.
+        </p>
+        <p>
+            My journey, fueled by determination and a touch of rebellion against my legal blindness, is a testament to the power of resilience. I see every obstacle as a chance to innovate, learn, and create positive change.
+        </p>
+        <p>
+            Fluent in both English and Arabic, I am driven by the belief that language should never be a barrier to connection. My gender, female, adds a unique perspective to my work, breaking stereotypes and paving the way for inclusivity.
+        </p>
+        <p>
+            Beyond coding and problem-solving, my passion lies in making technology accessible to everyone. With a rainbow flag as my backdrop, symbolizing diversity and unity, I invite you to join me in this journey of empowerment and progress.
+        </p>
+    </section>
+
+    <footer role="contentinfo">
+        <p>Contact me at: <a href="mailto:info@ella.sx">info@ella.sx</a></p>
+        <p>Sign Up | <a href="https://www.ella.sx" target="_blank" rel="noopener noreferrer">Log In</a></p>
+        <button onclick="subscribeNewsletter()">Subscribe to Newsletter</button>
+    </footer>
+
+    <script>
+        function subscribeNewsletter() {
+            window.location.href = 'mailto:e.b@ella.sx?subject=Newsletter%20Subscription';
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Tab') {
+                document.body.classList.add('user-is-tabbing');
+            }
+        });
+
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('user-is-tabbing');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
