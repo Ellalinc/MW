@@ -1,4 +1,4 @@
-markdown code block: # Ella Bazroon's Website
+# Ella Bazroon's Website
 
 Welcome to my personal website! This is my first venture into the world of web development, crafted with love using HTML, CSS, and a touch of JavaScript. Here, you'll find a blend of technology, diversity, and a glimpse into my journey as a software engineer.
 
